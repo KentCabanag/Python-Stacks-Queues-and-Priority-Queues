@@ -23,11 +23,11 @@ fifo = Queue()
 fifo.enqueue("1st")
 fifo.enqueue("2nd")
 fifo.enqueue("3rd")
+print(len(fifo))
 
-print(fifo.dequeue())
 
-print(fifo.dequeue())
+for element in fifo:
+    print(element)
 
-print(fifo.dequeue())
-
+len(fifo)
 
