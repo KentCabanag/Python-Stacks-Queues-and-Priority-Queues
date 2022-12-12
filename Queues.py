@@ -3,14 +3,13 @@
 from collections import deque
 
 class Queue:
-    #implementation of .__iter__() method and implementing .__len__()
     def __init__(self, *elements):
         self._elements = deque(elements)
 
-    def __len__(self):
+    def __len__(self): #implementation of .__len__() method
         return len(self._elements)
 
-    def __iter__(self):
+    def __iter__(self): #implementation of .__iter__() method
         while len(self) > 0:
             yield self.dequeue()
 
@@ -27,9 +26,9 @@ fifo.enqueue("2nd")
 fifo.enqueue("3rd")
 print(len(fifo))
 
-# printing the fifo queue
+
 for element in fifo:
-    print(element)
+    print(element) # printing the fifo queue
 
 len(fifo)
 
@@ -42,9 +41,9 @@ class Stack(Queue):
         return self._elements.pop()
 
 # reverse order
-lifo = Stack("1st", "2nd", "3rd")
+lifo = Stack("1st", "2nd", "3rd") 
 for element in lifo:
-    print(element)
+    print(element) # printing the element
 
 print()
 
