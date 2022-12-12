@@ -1,3 +1,5 @@
+
+# FIFO Queue
 from collections import deque
 
 class Queue:
@@ -25,7 +27,7 @@ fifo.enqueue("2nd")
 fifo.enqueue("3rd")
 print(len(fifo))
 
-
+# printing the fifo queue
 for element in fifo:
     print(element)
 
@@ -33,8 +35,8 @@ len(fifo)
 
 print()
 
+# LIFO Queue
 # Building a Stack Data Type
-
 class Stack(Queue):
     def dequeue(self):
         return self._elements.pop()
@@ -46,7 +48,7 @@ for element in lifo:
 
 print()
 
-# using a plain old Python list as a rudimentary stack
+# Different options when printing stack Queue
 lifo = []
 
 lifo.append("1st")
