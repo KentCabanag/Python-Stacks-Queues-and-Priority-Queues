@@ -1,6 +1,7 @@
 from collections import deque
 
 class Queue:
+    #implementation of .__iter__() method and implementing .__len__()
     def __init__(self, *elements):
         self._elements = deque(elements)
 
