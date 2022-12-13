@@ -2,14 +2,37 @@
 # Building a Priority Queue Data Type
 # Basic priority queue implementation
 # Using enqueue_with_priority() method
+# Refactoring the Code Using a Mixin Class
 from collections import deque
 from heapq import heappop, heappush
 from itertools import count
 
-class PriorityQueue:
+class IterableMixin:
+    def __len__(self):
+        return len(self._elements)
+
+    def __iter__(self):
+        while len(self) > 0:
+            yield self.dequeue()
+
+class Queue(IterableMixin):
+    def __init__(self, *elements):
+        self._elements = deque(elements)
+
+    def enqueue(self, element):
+        self._elements.append(element)
+
+    def dequeue(self):
+        return self._elements.popleft()
+
+class Stack(Queue):
+    def dequeue(self):
+        return self._elements.pop()
+
+class PriorityQueue(IterableMixin):
     def __init__(self):
         self._elements = []
-        self._counter = count()       
+        self._counter = count()
 
     def enqueue_with_priority(self, priority, value):
         element = (-priority, next(self._counter), value)
@@ -17,6 +40,3 @@ class PriorityQueue:
 
     def dequeue(self):
         return heappop(self._elements)[-1]
-
-
-
