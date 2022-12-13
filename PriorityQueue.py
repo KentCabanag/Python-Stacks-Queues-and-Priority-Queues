@@ -9,6 +9,7 @@ heappush(fruits, "banana")
 
 print(fruits) # Testing the heappush
 
+
 # Using heapq.heappop()
 from heapq import heappop
 
@@ -29,23 +30,8 @@ print(person2 < person3)# Printing if it is True or False
 
 print()
 
-# Building a Priority Queue Data Type
-# Basic priority queue implementation
-# Using enqueue_with_priority() method
-from heapq import heappop, heappush
-
-class PriorityQueue:
-    def __init__(self):
-        self._elements = []
-
-    def enqueue_with_priority(self, priority, value):
-        heappush(self._elements, (priority, value))
-
-    def dequeue(self):
-        return heappop(self._elements)
-
-# from queues import PriorityQueue
-
+#Testing it
+from queues import PriorityQueue
 CRITICAL = 3
 IMPORTANT = 2
 NEUTRAL = 1
@@ -56,4 +42,4 @@ messages.enqueue_with_priority(NEUTRAL, "Radio station tuned in")
 messages.enqueue_with_priority(CRITICAL, "Brake pedal depressed")
 messages.enqueue_with_priority(IMPORTANT, "Hazard lights turned on")
 
-print(messages.dequeue()) # Testing it
+print(messages.dequeue()) # printing it
