@@ -9,3 +9,10 @@ heappush(fruits, "banana")
 
 print(fruits) # Testing the heappush
 
+# Using heapq.heappop()
+from heapq import heappop
+
+heappop(fruits)
+
+
+print(fruits)
