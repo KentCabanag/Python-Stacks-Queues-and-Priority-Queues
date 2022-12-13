@@ -24,3 +24,19 @@ person3 = ("John", "Doe", 24)
 print(person1 < person2)# Printing if it is True or False
 
 print(person2 < person3)# Printing if it is True or False
+
+# Building a Priority Queue Data Type
+# Basic priority queue implementation
+# Using enqueue_with_priority() method
+from heapq import heappop, heappush
+
+class PriorityQueue:
+    def __init__(self):
+        self._elements = []
+
+    def enqueue_with_priority(self, priority, value):
+        heappush(self._elements, (priority, value))
+
+    def dequeue(self):
+        return heappop(self._elements)
+
