@@ -1,5 +1,6 @@
 
 # FIFO Queue
+# Building a Queue Data Type
 from collections import deque
 
 class Queue:
