@@ -150,5 +150,26 @@ class View:
         align = Align(padding + worker.state, align="left", vertical="middle")
         return Panel(align, height=5, title=title)
 
+#added main for animation of the emojis
+def main(args):
+    buffer = QUEUE_TYPES[args.queue]()
+    products = PRIORITIZED_PRODUCTS if args.queue == "heap" else PRODUCTS
+    producers = [
+        Producer(args.producer_speed, buffer, products)
+        for _ in range(args.producers)
+    ]
+    consumers = [
+        Consumer(args.consumer_speed, buffer) for _ in range(args.consumers)
+    ]
+
+    for producer in producers:
+        producer.start()
+
+    for consumer in consumers:
+        consumer.start()
+
+    view = View(buffer, producers, consumers)
+    view.animate()
+
 
 
