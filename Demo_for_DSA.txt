@@ -1,4 +1,4 @@
-python nov.py --producers 3  --consumers 2  --producer-speed 2  --consumer-speed 2  --queue fifo
-python nov.py --producers 3  --consumers 2  --producer-speed 2  --consumer-speed 2  --queue lifo
-python nov.py --producers 3  --consumers 2  --producer-speed 2  --consumer-speed 2  --queue heap
+python Thread_Safe_Queues.py --producers 3  --consumers 2  --producer-speed 2  --consumer-speed 2  --queue fifo
+python Thread_Safe_Queues.py --producers 3  --consumers 2  --producer-speed 2  --consumer-speed 2  --queue lifo
+python Thread_Safe_Queues.py --producers 3  --consumers 2  --producer-speed 2  --consumer-speed 2  --queue heap
 
